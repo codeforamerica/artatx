@@ -1,3 +1,10 @@
 from django.db import models
 
-# Create your models here.
+class ArtWork(models.Model):
+    title = models.CharField(max_length=255)
+    artist = models.CharField(max_length=255)
+    year = models.SmallIntegerField()
+    website = models.UrlField(max_length=255)
+
+    def __unicode__(self):
+        return self.title
