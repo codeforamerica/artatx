@@ -1,0 +1,36 @@
+<!DOCTYPE html> 
+<html> 
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1"> 
+	<title>The People's Gallery 2012 - {{artwork.title}}</title> 
+	<link rel="stylesheet" href="//code.jquery.com/mobile/1.0.1/jquery.mobile-1.0.1.min.css" />
+	<script src="http://code.jquery.com/jquery-1.6.4.min.js"></script>
+	<script src="//code.jquery.com/mobile/1.0.1/jquery.mobile-1.0.1.min.js"></script>
+</head> 
+
+<body> 
+
+<div data-role="page">
+
+	<div data-role="header">
+		<h1>{{artwork.title}}</h1>
+	</div><!-- /header -->
+
+	<div data-role="content">	
+        <p>
+            By: {{artwork.artist}}<br>
+            Year: {{artwork.year}}<br>
+            {{artwork.website|urlize}}
+        </p>
+	</div><!-- /content -->
+	
+	<div data-role="footer">
+		<h4>Brought to you by the City of Austin & Code for America</h4>
+	</div><!-- /footer -->
+	
+</div><!-- /page -->
+
+</body>
+</html>

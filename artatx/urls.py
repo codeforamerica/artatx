@@ -11,5 +11,7 @@ urlpatterns = patterns('',
     # Uncomment the next line to enable the admin:
     url(r'^admin/', include(admin.site.urls)),
 
+    url(r'view/(?P<id>\d+)/$', 'artworks.views.view', name='artworks_view'),
+
     url(r'^$', 'home.views.index', name='home_index'),
 )
