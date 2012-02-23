@@ -13,5 +13,5 @@ urlpatterns = patterns('',
 
     url(r'view/(?P<id>\d+)/$', 'artworks.views.view', name='artworks_view'),
 
-    url(r'^$', 'home.views.index', name='home_index'),
+    url(r'^$', 'artworks.views.index', name='artworks_index'),
 )
