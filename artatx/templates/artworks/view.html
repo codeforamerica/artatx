@@ -8,6 +8,8 @@
 	<link rel="stylesheet" href="//code.jquery.com/mobile/1.0.1/jquery.mobile-1.0.1.min.css" />
 	<script src="http://code.jquery.com/jquery-1.6.4.min.js"></script>
 	<script src="//code.jquery.com/mobile/1.0.1/jquery.mobile-1.0.1.min.js"></script>
+    <script charset="utf-8" src="http://widgets.twimg.com/j/2/widget.js"></script>
+    <script src="http://platform.twitter.com/anywhere.js?id=C7GXJvlD6SijNs5GwKLi3g&v=1" type="text/javascript"></script>
 </head> 
 
 <body> 
@@ -23,6 +25,46 @@
             By: {{artwork.artist}}<br>
             Year: {{artwork.year}}<br>
             {{artwork.website|urlize}}
+        </p>
+        <p>
+        <div id="tbox"></div>
+        <script type="text/javascript">
+            twttr.anywhere(function (T) {
+                T("#tbox").tweetBox({
+                    label: 'What do you think of the following artwork?',
+                    defaultContent: '   http://artatx.herokuapp.com/view/{{artwork.id}}/'
+                });
+            });
+        </script>
+        </p>
+        <p>
+            <script>
+            new TWTR.Widget({
+              version: 2,
+              type: 'search',
+              search: 'http://artatx.herokuapp.com/view/{{artwork.id}}/',
+              interval: 30000,
+              width: 'auto',
+              height: 300,
+              theme: {
+                shell: {
+                  background: '#e8e8e8',
+                  color: '#ffffff'
+                },
+                tweets: {
+                  background: '#ffffff',
+                  color: '#444444',
+                  links: '#1985b5'
+                }
+              },
+              features: {
+                scrollbar: false,
+                loop: true,
+                live: true,
+                behavior: 'default'
+              }
+            }).render().start();
+            </script>
         </p>
 	</div><!-- /content -->
 
