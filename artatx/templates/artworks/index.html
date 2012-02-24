@@ -12,13 +12,13 @@
 <div data-role="page">
 
 	<div data-role="header">
-		<h1>Artwork Index</h1>
+		<h1>The People's Gallery</h1>
 	</div><!-- /header -->
 
 	<div data-role="content">	
         <ul data-role="listview" data-inset="true" data-filter="true">
         {% for artwork in artworks %}
-            <li><a data-ajax="false" href="{% url artworks_view artwork.id%}">{{artwork.id}}. {{artwork.title}} - {{artwork.artist}}</a></li>
+            <li><a data-ajax="false" href="{% url artworks_view artwork.id%}">{{artwork.id}}. {{artwork.title}}</a></li>
         {% endfor %}
         </ul>
 	</div><!-- /content -->
