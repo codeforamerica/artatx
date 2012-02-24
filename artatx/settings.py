@@ -126,7 +126,7 @@ INSTALLED_APPS = (
     'django.contrib.admindocs',
 
     'gunicorn',
-    'django_extensions',
+    #'django_extensions',
 
     'artworks',
 )
