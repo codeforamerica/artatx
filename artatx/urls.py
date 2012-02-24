@@ -13,7 +13,7 @@ urlpatterns = patterns('',
 
     url(r'floor/(?P<level>\d+)/$','artworks.views.level', name='artworks_level'),
 
-    url(r'view/(?P<id>\d+)/$', 'artworks.views.view', name='artworks_view'),
+    url(r'v/(?P<id>\d+)/$', 'artworks.views.view', name='artworks_view'),
 
     url(r'^$', 'artworks.views.index', name='artworks_index'),
 )
