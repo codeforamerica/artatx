@@ -29,13 +29,14 @@
 	<div data-role="content">	
         <p>
             <h1>{{artwork.work_num}}. {{artwork.title}}</h1>
+            {{artwork.credit}}<br>
             {{artwork.artist}},
             {{artwork.year}}<br>
             {{artwork.medium}}<br>
-            {{artwork.credit}}<br>
             {{artwork.website|urlize}}
         </p>
         <p>
+        <div id='load-anim'><img src='http://dl.dropbox.com/u/55826838/ajax-loader.gif'/></div>
         <div id="tbox"></div>
         <script type="text/javascript">
             twttr.anywhere(function (T) {
@@ -44,6 +45,7 @@
                     label: 'Tweet your thoughts',
                     defaultContent: '\n#artatx\nhttp://artatx.herokuapp.com/view/{{artwork.id}}/'
                 });
+                $('#load-anim').hide()
             });
         </script>
         </p>
