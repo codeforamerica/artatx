@@ -11,6 +11,8 @@ urlpatterns = patterns('',
     # Uncomment the next line to enable the admin:
     url(r'^admin/', include(admin.site.urls)),
 
+    url(r'floor/(?P<level>\d+)/$','artworks.views.level', name='artworks_level'),
+
     url(r'view/(?P<id>\d+)/$', 'artworks.views.view', name='artworks_view'),
 
     url(r'^$', 'artworks.views.index', name='artworks_index'),

@@ -9,7 +9,13 @@ def index(request, template_name='artworks/index.html'):
     return render_to_response(template_name, context,
         context_instance=RequestContext(request))
 
-def view(request, id= None, template_name='artworks/view.html'):
+def level(request, level=None, template_name='artworks/level.html'):
+    context = {}
+    context['artworks'] = Artwork.objects.filter(level=level)
+    return render_to_response(template_name, context,
+        context_instance=RequestContext(request))
+
+def view(request, id=None, template_name='artworks/view.html'):
     context = {}
     context['artwork'] = get_object_or_404(Artwork, id=id) 
     return render_to_response(template_name, context,

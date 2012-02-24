@@ -16,10 +16,10 @@
 	</div><!-- /header -->
 
 	<div data-role="content">	
-        <ul data-role="listview" data-inset="true">
-            <li><a href="{% url artworks_level 1 %}">Floor 1</a></li>
-            <li><a href="{% url artworks_level 2 %}">Floor 2</a></li>
-            <li><a href="{% url artworks_level 3 %}">Floor 3</a></li>
+        <ul data-role="listview" data-inset="true" data-filter="true">
+        {% for artwork in artworks %}
+            <li><a data-ajax="false" href="{% url artworks_view artwork.id%}">{{artwork.id}}. {{artwork.title}}</a></li>
+        {% endfor %}
         </ul>
 	</div><!-- /content -->
 
