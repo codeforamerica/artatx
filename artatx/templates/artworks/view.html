@@ -17,7 +17,7 @@
 <div data-role="page">
 
 	<div data-role="header">
-		<h1>The People's Gallery</h1>
+		<h1><a href='{% url artworks_index %}'>The People's Gallery</a></h1>
 	</div><!-- /header -->
 
 	<div data-role="content">	
@@ -33,8 +33,8 @@
             twttr.anywhere(function (T) {
                 T("#tbox").tweetBox({
                     width: 300,
-                    label: 'What do you think of the following artwork?',
-                    defaultContent: '   http://artatx.herokuapp.com/view/{{artwork.id}}/'
+                    label: 'Tweet your thoughts',
+                    defaultContent: '\n#artatx\nhttp://artatx.herokuapp.com/view/{{artwork.id}}/'
                 });
             });
         </script>
