@@ -17,7 +17,13 @@
 <div data-role="page">
 
 	<div data-role="header">
+        {% if prev_id %}
+        <a href="{% url artworks_view prev_id %}" class='ui-btn-left' data-icon="arrow-l" data-ajax="false">Prev</a>
+        {% endif %}
 		<h1><a href='{% url artworks_index %}'>The People's Gallery</a></h1>
+        {% if next_id %}
+        <a href="{% url artworks_view next_id %}" class='ui-btn-right' data-icon="arrow-r" data-ajax="false">Next</a>
+        {% endif %}
 	</div><!-- /header -->
 
 	<div data-role="content">	

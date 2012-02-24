@@ -17,6 +17,10 @@ def level(request, level=None, template_name='artworks/level.html'):
 
 def view(request, id=None, template_name='artworks/view.html'):
     context = {}
+    prev_id = int(id) - 1
+    context['prev_id'] = prev_id if id > 0 else None 
     context['artwork'] = get_object_or_404(Artwork, id=id) 
+    next_id = int(id) + 1
+    context['next_id'] = next_id if Artwork.objects.filter(id=next_id).exists() else None 
     return render_to_response(template_name, context,
         context_instance=RequestContext(request))
