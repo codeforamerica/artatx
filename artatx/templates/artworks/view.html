@@ -22,9 +22,11 @@
 
 	<div data-role="content">	
         <p>
-            <h1>{{artwork.title}}</h1>
+            <h1>{{artwork.work_num}}. {{artwork.title}}</h1>
             {{artwork.artist}},
             {{artwork.year}}<br>
+            {{artwork.medium}}<br>
+            {{artwork.credit}}<br>
             {{artwork.website|urlize}}
         </p>
         <p>
