@@ -17,13 +17,14 @@
 <div data-role="page">
 
 	<div data-role="header">
-		<h1>{{artwork.title}}</h1>
+		<h1>The People's Gallery</h1>
 	</div><!-- /header -->
 
 	<div data-role="content">	
         <p>
-            By: {{artwork.artist}}<br>
-            Year: {{artwork.year}}<br>
+            <h1>{{artwork.title}}</h1>
+            {{artwork.artist}},
+            {{artwork.year}}<br>
             {{artwork.website|urlize}}
         </p>
         <p>
